@@ -20,15 +20,19 @@ public class Program {
 		
 		System.out.println("*** TEST 2: Seller findByDepartment ***");
 		Department dep = new Department(2, null);
-		
 		List <Seller> listSeller = sellerDao.findByDepartment(dep);
-		listSeller.sort((sell1, sell2) -> sell1.getName().toUpperCase().compareTo(sell2.getName().toUpperCase()));
-		
+		//listSeller.sort((sell1, sell2) -> sell2.getName().toUpperCase().compareTo(sell1.getName().toUpperCase()));
 		for (Seller sel : listSeller) {
 			System.out.println(sel);
 		}
 		
 		System.out.println();
+		
+		System.out.println("*** TEST 3: Seller findAll ***");
+		List <Seller> listSeller2 = sellerDao.findAll();
+		for (Seller sel : listSeller2) {
+			System.out.println(sel);
+		}
 	}
 
 }
